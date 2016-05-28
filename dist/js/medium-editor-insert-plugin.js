@@ -1854,7 +1854,7 @@ this["MediumInsert"]["Templates"]["src/js/templates/images-toolbar.hbs"] = Handl
      */
 
     Images.prototype.uploadDone = function (e, data) {
-        $.proxy(this, 'showImage', window.configuration.imgixMediaFilterUrl + data.payload, data)();
+        $.proxy(this, 'showImage', window.configuration.imgixMediaFilterUrl + encodeURIComponent(data.result.payload), data)();
 
         this.core.clean();
         this.sorting();
